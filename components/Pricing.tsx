@@ -1,15 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import Reveal from "./RevealWrapper";
-import BookingModal from "./BookingModal";
+import { useBooking } from "./BookingContext";
 
 export default function Pricing() {
-  const [activePlan, setActivePlan] = useState<string | null>(null);
+  const { open: openBooking } = useBooking();
 
   const open = (plan: string) => (e: React.MouseEvent) => {
     e.preventDefault();
-    setActivePlan(plan);
+    openBooking(plan);
   };
 
   return (
@@ -23,7 +22,7 @@ export default function Pricing() {
           </Reveal>
           <Reveal delay={0.1}>
             <p>
-              From a first site to a full brokerage platform — we scope each project
+              From a first site to a full brokerage platform, we scope each project
               to what you actually need. All plans include hosting, SSL, and a training session.
             </p>
           </Reveal>
@@ -35,7 +34,7 @@ export default function Pricing() {
             <div className="price-card">
               <span className="price-badge">Starter</span>
               <div className="price-name">Essentials</div>
-              <p style={{ fontSize: "0.78rem", color: "rgba(242,237,230,0.4)", fontWeight: 300, lineHeight: 1.6 }}>
+              <p style={{ fontSize: "0.78rem", color: "rgba(249,249,249,0.4)", fontWeight: 300, lineHeight: 1.6 }}>
                 The right foundation for agents ready to stop being invisible online.
               </p>
               <div className="price-divider" style={{ marginTop: 24 }} />
@@ -61,7 +60,7 @@ export default function Pricing() {
             <div className="price-card featured">
               <span className="price-badge">★ Most chosen</span>
               <div className="price-name">Professional</div>
-              <p style={{ fontSize: "0.78rem", color: "rgba(242,237,230,0.4)", fontWeight: 300, lineHeight: 1.6 }}>
+              <p style={{ fontSize: "0.78rem", color: "rgba(249,249,249,0.4)", fontWeight: 300, lineHeight: 1.6 }}>
                 For agents who want a site that works as hard as they do.
               </p>
               <div className="price-divider" style={{ marginTop: 24 }} />
@@ -88,7 +87,7 @@ export default function Pricing() {
             <div className="price-card">
               <span className="price-badge">Enterprise</span>
               <div className="price-name">Brokerage</div>
-              <p style={{ fontSize: "0.78rem", color: "rgba(242,237,230,0.4)", fontWeight: 300, lineHeight: 1.6 }}>
+              <p style={{ fontSize: "0.78rem", color: "rgba(249,249,249,0.4)", fontWeight: 300, lineHeight: 1.6 }}>
                 For teams and brokerages that need a platform, not just a website.
               </p>
               <div className="price-divider" style={{ marginTop: 24 }} />
@@ -114,7 +113,7 @@ export default function Pricing() {
             <div className="price-card">
               <span className="price-badge">Real Estate</span>
               <div className="price-name">Developments</div>
-              <p style={{ fontSize: "0.78rem", color: "rgba(242,237,230,0.4)", fontWeight: 300, lineHeight: 1.6 }}>
+              <p style={{ fontSize: "0.78rem", color: "rgba(249,249,249,0.4)", fontWeight: 300, lineHeight: 1.6 }}>
                 Tailored digital presence for building developments, pre-sales, and real estate projects.
               </p>
               <div className="price-divider" style={{ marginTop: 24 }} />
@@ -122,7 +121,7 @@ export default function Pricing() {
                 {[
                   "Project landing page & branding",
                   "Unit availability & floor plans",
-                  "Interactive gallery & 3D renders",
+                  "Interactive gallery",
                   "Pre-sale lead capture system",
                   "WhatsApp & email automation",
                   "Multilingual support",
@@ -140,10 +139,6 @@ export default function Pricing() {
           </div>
         </Reveal>
       </div>
-
-      {activePlan && (
-        <BookingModal plan={activePlan} onClose={() => setActivePlan(null)} />
-      )}
     </section>
   );
 }

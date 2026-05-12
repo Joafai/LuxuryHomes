@@ -10,19 +10,7 @@ const faqs = [
   },
   {
     q: "What do I need to get started?",
-    a: "Just 30 minutes for a discovery call. Bring your logo if you have one, a sense of the properties you represent, and your honest opinion of what you hate about other agent websites. We handle the rest — copy, structure, design, development, and deployment.",
-  },
-  {
-    q: "Can I update the properties myself?",
-    a: "Yes. Every site we build includes an admin panel where you can add, edit, highlight, or remove listings without touching a single line of code. We include a training session at launch so you can manage everything independently from day one.",
-  },
-  {
-    q: "What if I don't like what you build?",
-    a: "Revision rounds are built into every plan. We show you the site before it goes live and iterate until it feels right. If after revisions something still isn't working, we fix it — that's part of the service.",
-  },
-  {
-    q: "Do you work with agents outside Argentina?",
-    a: "Yes. We work with agents and brokers across Latin America — Mexico, Colombia, Chile, Uruguay, Paraguay, and beyond. The entire process is remote. Time zones have never been a problem and our team is bilingual.",
+    a: "Just 30 minutes for a discovery call. Bring your logo if you have one, a sense of the properties you represent, and your honest opinion of what you hate about other agent websites. We handle the rest: copy, structure, design, development, and deployment.",
   },
   {
     q: "Is there a monthly fee after delivery?",
@@ -30,7 +18,19 @@ const faqs = [
   },
   {
     q: "Do you write the copy too?",
-    a: "For the Professional and Brokerage plans, yes — we include a copywriting session where we help craft your headline, bio, and service descriptions. For the Essentials plan, we provide a content brief that makes writing your own text straightforward.",
+    a: "For the Professional and Brokerage plans, yes, we include a copywriting session where we help craft your headline, bio, and service descriptions. For the Essentials plan, we provide a content brief that makes writing your own text straightforward.",
+  },
+  {
+    q: "Will my site look like other agents' sites you've built?",
+    a: "No. Every site is built from scratch around your brand, your market, and your clientele. We don't reuse layouts, color systems, or copy. Two agents in the same city could both work with us and have completely different sites, that's the point.",
+  },
+  {
+    q: "What happens if I want to add something after launch?",
+    a: "Small updates, a new listing, a headshot swap, a bio tweak, are covered in your first year. For larger additions like a new section, a landing page, or a redesigned block, we scope it and quote it separately. Most post-launch requests turn around in 48 hours.",
+  },
+  {
+    q: "Is there a monthly fee after delivery?",
+    a: "Yes, all plans include a low monthly maintenance fee that covers hosting, SSL, security monitoring, and up to two content updates per month. There's no surprise invoice at the end of year one. You know exactly what you're paying from day one, and you can cancel anytime, you own your site and can take it anywhere.",
   },
 ];
 

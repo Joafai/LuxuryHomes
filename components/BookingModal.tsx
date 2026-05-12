@@ -61,7 +61,7 @@ export default function BookingModal({ plan, onClose }: Props) {
           onClick={handleClose}
           style={{
             position: "absolute", inset: 0,
-            background: "rgba(14,14,13,0.88)",
+            background: "rgba(32,32,32,0.88)",
             backdropFilter: "blur(8px)",
             opacity: visible ? 1 : 0,
             transition: "opacity 0.3s ease",
@@ -72,7 +72,7 @@ export default function BookingModal({ plan, onClose }: Props) {
         <div style={{
           position: "relative", zIndex: 1,
           background: "var(--ink)",
-          border: "1px solid rgba(196,201,206,0.25)",
+          border: "1px solid rgba(188,207,201,0.25)",
           maxWidth: 520, width: "100%",
           padding: "52px 48px",
           animation: visible ? "modalFadeIn 0.35s cubic-bezier(0.22,1,0.36,1) forwards" : undefined,
@@ -82,7 +82,7 @@ export default function BookingModal({ plan, onClose }: Props) {
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 32 }}>
             <div style={{
               display: "inline-flex", alignItems: "center", gap: 8,
-              border: "1px solid rgba(196,201,206,0.3)",
+              border: "1px solid rgba(188,207,201,0.3)",
               padding: "6px 14px",
               borderRadius: "1px",
             }}>
@@ -100,11 +100,11 @@ export default function BookingModal({ plan, onClose }: Props) {
               style={{
                 background: "none", border: "none", padding: "4px 8px",
                 fontFamily: "var(--serif)", fontSize: "1.6rem",
-                color: "rgba(242,237,230,0.3)", lineHeight: 1,
+                color: "rgba(249,249,249,0.3)", lineHeight: 1,
                 transition: "color 0.2s",
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(242,237,230,0.3)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(249,249,249,0.3)")}
             >
               ×
             </button>
@@ -119,7 +119,7 @@ export default function BookingModal({ plan, onClose }: Props) {
                 Book a free<br /><em style={{ fontStyle: "italic", color: "var(--gold)" }}>30-min call.</em>
               </h3>
               <p style={{
-                fontSize: "0.8rem", color: "rgba(242,237,230,0.4)",
+                fontSize: "0.8rem", color: "rgba(249,249,249,0.4)",
                 fontWeight: 300, lineHeight: 1.7, marginBottom: 36,
               }}>
                 Leave your details and we&apos;ll reach out in{" "}
@@ -134,7 +134,7 @@ export default function BookingModal({ plan, onClose }: Props) {
                   { id: "phone", label: "WhatsApp / Phone",   type: "tel",   placeholder: "+54 9 11 0000-0000" },
                 ].map(({ id, label, type, placeholder }) => (
                   <div key={id} style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                    <label style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(242,237,230,0.35)" }}>
+                    <label style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(249,249,249,0.35)" }}>
                       {label}
                     </label>
                     <input
@@ -144,8 +144,8 @@ export default function BookingModal({ plan, onClose }: Props) {
                       value={form[id as keyof typeof form]}
                       onChange={(e) => setForm({ ...form, [id]: e.target.value })}
                       style={{
-                        background: "rgba(242,237,230,0.03)",
-                        border: "1px solid rgba(196,201,206,0.2)",
+                        background: "rgba(249,249,249,0.03)",
+                        border: "1px solid rgba(188,207,201,0.2)",
                         borderRadius: "1px",
                         padding: "13px 16px",
                         color: "var(--bone)",
@@ -156,8 +156,8 @@ export default function BookingModal({ plan, onClose }: Props) {
                         transition: "border-color 0.2s",
                         width: "100%",
                       }}
-                      onFocus={(e) => (e.target.style.borderColor = "rgba(196,201,206,0.6)")}
-                      onBlur={(e) => (e.target.style.borderColor = "rgba(196,201,206,0.2)")}
+                      onFocus={(e) => (e.target.style.borderColor = "rgba(188,207,201,0.6)")}
+                      onBlur={(e) => (e.target.style.borderColor = "rgba(188,207,201,0.2)")}
                     />
                   </div>
                 ))}
@@ -183,14 +183,14 @@ export default function BookingModal({ plan, onClose }: Props) {
             <div style={{ textAlign: "center", padding: "20px 0" }}>
               <div style={{
                 width: 56, height: 56, borderRadius: "50%",
-                border: "1px solid rgba(196,201,206,0.3)",
+                border: "1px solid rgba(188,207,201,0.3)",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 margin: "0 auto 28px", color: "var(--gold)", fontSize: "1.4rem",
               }}>✓</div>
               <h3 style={{ fontFamily: "var(--serif)", fontSize: "1.8rem", fontWeight: 300, color: "var(--bone)", marginBottom: 12 }}>
                 We&apos;ll be in touch.
               </h3>
-              <p style={{ fontSize: "0.82rem", color: "rgba(242,237,230,0.45)", fontWeight: 300, lineHeight: 1.7 }}>
+              <p style={{ fontSize: "0.82rem", color: "rgba(249,249,249,0.45)", fontWeight: 300, lineHeight: 1.7 }}>
                 Expect a message within <strong style={{ color: "var(--bone)", fontWeight: 400 }}>8 hours</strong>.<br />
                 We&apos;ll confirm a time and send you a calendar invite.
               </p>

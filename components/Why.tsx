@@ -1,6 +1,5 @@
 "use client";
 
-import type { ReactNode } from "react";
 import Reveal from "./RevealWrapper";
 
 const features = [
@@ -11,7 +10,7 @@ const features = [
       </svg>
     ),
     title: "Industry-Specific Expertise",
-    desc: "Built exclusively for real estate agents. No learning curve — we hit the ground running.",
+    desc: "Built exclusively for real estate agents. No learning curve, we hit the ground running.",
   },
   {
     icon: (
@@ -28,8 +27,8 @@ const features = [
         <path d="M9 2a7 7 0 100 14A7 7 0 009 2zm3.7 5.3l-4 4a1 1 0 01-1.4 0l-2-2a1 1 0 011.4-1.4l1.3 1.29 3.3-3.3a1 1 0 011.4 1.41z"/>
       </svg>
     ),
-    title: "Unlimited Revisions",
-    desc: "We iterate until you're proud to share your URL. Zero compromise on quality.",
+    title: "We Don't Launch Until You Love It",
+    desc: "Your site doesn't go live until you're proud to share it.",
   },
   {
     icon: (
@@ -77,7 +76,7 @@ export default function Why() {
               style={{
                 fontFamily: "var(--font-cormorant), serif",
                 fontSize: "clamp(2rem, 4vw, 3.2rem)",
-                color: "#fff",
+                color: "#F9F9F9",
                 marginBottom: 20,
               }}
             >
@@ -89,7 +88,7 @@ export default function Why() {
           <Reveal delay={0.2}>
             <p
               style={{
-                color: "rgba(242,237,230,0.4)",
+                color: "rgba(249,249,249,0.4)",
                 fontSize: "1rem",
                 fontWeight: 300,
                 lineHeight: 1.8,
@@ -118,7 +117,7 @@ export default function Why() {
                   onMouseEnter={(e) => {
                     const el = e.currentTarget;
                     el.style.borderColor = "var(--gold)";
-                    el.style.background = "rgba(201,169,110,0.03)";
+                    el.style.background = "rgba(188,207,201,0.03)";
                   }}
                   onMouseLeave={(e) => {
                     const el = e.currentTarget;
@@ -131,8 +130,8 @@ export default function Why() {
                       width: 40,
                       height: 40,
                       minWidth: 40,
-                      background: "rgba(196,201,206,0.08)",
-                      border: "1px solid rgba(196,201,206,0.2)",
+                      background: "rgba(188,207,201,0.08)",
+                      border: "1px solid rgba(188,207,201,0.2)",
                       borderRadius: "2px",
                       display: "flex",
                       alignItems: "center",
@@ -145,7 +144,7 @@ export default function Why() {
                   <div>
                     <h4
                       style={{
-                        color: "#fff",
+                        color: "#F9F9F9",
                         fontSize: "0.95rem",
                         marginBottom: 4,
                         fontFamily: "var(--font-dm-sans), sans-serif",
@@ -154,7 +153,7 @@ export default function Why() {
                     >
                       {f.title}
                     </h4>
-                    <p style={{ color: "rgba(242,237,230,0.4)", fontSize: "0.85rem", fontWeight: 300 }}>
+                    <p style={{ color: "rgba(249,249,249,0.4)", fontSize: "0.85rem", fontWeight: 300 }}>
                       {f.desc}
                     </p>
                   </div>
@@ -205,7 +204,7 @@ export default function Why() {
                     style={{
                       height: 10,
                       borderRadius: 100,
-                      background: "rgba(201,169,110,0.15)",
+                      background: "rgba(188,207,201,0.15)",
                       width: `${w}%`,
                     }}
                   />
@@ -214,7 +213,7 @@ export default function Why() {
                   style={{
                     flex: 1,
                     background:
-                      "linear-gradient(135deg, rgba(201,169,110,0.08) 0%, rgba(201,169,110,0.02) 100%)",
+                      "linear-gradient(135deg, rgba(188,207,201,0.08) 0%, rgba(188,207,201,0.02) 100%)",
                     border: "1px dashed var(--border)",
                     borderRadius: 4,
                     display: "flex",
@@ -222,13 +221,13 @@ export default function Why() {
                     justifyContent: "center",
                     fontFamily: "var(--font-cormorant), serif",
                     fontSize: "1.8rem",
-                    color: "rgba(201,169,110,0.2)",
+                    color: "rgba(188,207,201,0.2)",
                   }}
                 >
                   LH
                 </div>
-                <div style={{ height: 10, borderRadius: 100, background: "rgba(201,169,110,0.15)", width: "100%" }} />
-                <div style={{ height: 10, borderRadius: 100, background: "rgba(201,169,110,0.15)", width: "60%" }} />
+                <div style={{ height: 10, borderRadius: 100, background: "rgba(188,207,201,0.15)", width: "100%" }} />
+                <div style={{ height: 10, borderRadius: 100, background: "rgba(188,207,201,0.15)", width: "60%" }} />
               </div>
             </div>
             {/* Badge */}

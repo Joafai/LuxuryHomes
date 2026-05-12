@@ -18,7 +18,7 @@ export default function Logos() {
           fontSize: "0.72rem",
           letterSpacing: "0.2em",
           textTransform: "uppercase",
-          color: "rgba(242,237,230,0.4)",
+          color: "rgba(249,249,249,0.4)",
           marginBottom: 40,
         }}
       >
@@ -39,16 +39,16 @@ export default function Logos() {
             style={{
               fontFamily: "var(--font-cormorant), serif",
               fontSize: "1.05rem",
-              color: "rgba(255,255,255,0.18)",
+              color: "rgba(249,249,249,0.18)",
               letterSpacing: "0.08em",
               transition: "color 0.3s",
               cursor: "default",
             }}
             onMouseEnter={(e) =>
-              ((e.currentTarget as HTMLElement).style.color = "rgba(201,169,110,0.5)")
+              ((e.currentTarget as HTMLElement).style.color = "rgba(188,207,201,0.5)")
             }
             onMouseLeave={(e) =>
-              ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.18)")
+              ((e.currentTarget as HTMLElement).style.color = "rgba(249,249,249,0.18)")
             }
           >
             {name}

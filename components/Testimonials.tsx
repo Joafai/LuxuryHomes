@@ -4,25 +4,19 @@ import Reveal from "./RevealWrapper";
 
 const testimonials = [
   {
-    initials: "SW",
-    name: "Sarah Williams",
     role: "Luxury Agent · Beverly Hills, CA",
     quote:
-      "Within a week of launching my new site, I had 3 inbound leads from buyers I'd never met. The design instantly communicated the premium level of service I offer.",
+      "Honestly, I was skeptical. I'd worked with two agencies before and both times I ended up with something that felt generic. This was completely different, they asked questions no one had ever asked me about my business. The result felt like me, not a template.",
   },
   {
-    initials: "MR",
-    name: "Marcus Rodriguez",
     role: "Top Producer · Miami Beach, FL",
     quote:
-      "I used to cringe sharing my old website. Now I hand it to every client I meet. The Luxury Homes team understood my brand better than I did.",
+      "My old site had my 2019 headshot and listings that had already closed. I knew it was bad but kept pushing it off. Now I actually send the link proactively, before meetings, in my email signature, everywhere. It does a lot of the selling before I even get on the phone.",
   },
   {
-    initials: "JL",
-    name: "Jessica Liu",
     role: "Broker Associate · Manhattan, NY",
     quote:
-      "They delivered my first draft in under 48 hours and it was stunning. The process was effortless — they handled everything while I focused on my clients.",
+      "I almost didn't do it. The timing felt off, I had three listings active and didn't want the distraction. I pushed the call twice. Finally did it, took maybe 25 minutes, and two weeks later I had a site I'd been meaning to build for four years. I wish I'd done it when I first thought about it.",
   },
 ];
 
@@ -50,7 +44,7 @@ export default function Testimonials() {
               style={{
                 fontFamily: "var(--font-cormorant), serif",
                 fontSize: "clamp(2rem, 4vw, 3.2rem)",
-                color: "#fff",
+                color: "#F9F9F9",
                 marginBottom: 20,
               }}
             >
@@ -61,7 +55,7 @@ export default function Testimonials() {
           <Reveal delay={0.2}>
             <p
               style={{
-                color: "rgba(242,237,230,0.4)",
+                color: "rgba(249,249,249,0.4)",
                 fontSize: "1rem",
                 maxWidth: 520,
                 margin: "0 auto",
@@ -84,7 +78,7 @@ export default function Testimonials() {
           className="testi-grid"
         >
           {testimonials.map((t, i) => (
-            <Reveal key={t.name} delay={i * 0.1}>
+            <Reveal key={t.role} delay={i * 0.1}>
               <div
                 style={{
                   background: "var(--ink)",
@@ -123,7 +117,7 @@ export default function Testimonials() {
                 </div>
                 <p
                   style={{
-                    color: "rgba(242,237,230,0.4)",
+                    color: "rgba(249,249,249,0.4)",
                     fontSize: "0.92rem",
                     lineHeight: 1.8,
                     fontWeight: 300,
@@ -133,30 +127,18 @@ export default function Testimonials() {
                 >
                   {t.quote}
                 </p>
-                <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-                  <div
-                    style={{
-                      width: 44,
-                      height: 44,
-                      borderRadius: "50%",
-                      background: "linear-gradient(135deg, rgba(201,169,110,0.6), rgba(201,169,110,0.9))",
-                      border: "1px solid rgba(201,169,110,0.3)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontFamily: "var(--font-cormorant), serif",
-                      fontSize: "1rem",
-                      color: "var(--ink)",
-                      fontWeight: 700,
-                      minWidth: 44,
-                    }}
-                  >
-                    {t.initials}
-                  </div>
-                  <div>
-                    <div style={{ fontWeight: 600, color: "#fff", fontSize: "0.9rem" }}>{t.name}</div>
-                    <div style={{ color: "rgba(242,237,230,0.4)", fontSize: "0.78rem" }}>{t.role}</div>
-                  </div>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 10,
+                    color: "rgba(249,249,249,0.55)",
+                    fontSize: "0.82rem",
+                    fontWeight: 400,
+                  }}
+                >
+                  <span style={{ color: "var(--gold)" }}>—</span>
+                  <span>{t.role}</span>
                 </div>
               </div>
             </Reveal>

@@ -36,7 +36,7 @@ export default function CTA() {
 
         <Reveal delay={0.4}>
           <p className="cta-guarantee">
-            No commitment required · Response within 24 hours · Available across Latin America
+            No commitment required · Response within 24 hours
           </p>
         </Reveal>
       </div>

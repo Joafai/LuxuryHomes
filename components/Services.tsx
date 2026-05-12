@@ -6,7 +6,7 @@ const services = [
   {
     tag: "Identity",
     title: "Agent Personal Brand Site",
-    desc: "A signature website that positions you as the go-to agent in your market. Biographical storytelling, testimonials, and listings — all in one elegant platform.",
+    desc: "A signature website that positions you as the go-to agent in your market. Biographical storytelling, testimonials, and listings, all in one elegant platform.",
     features: ["Custom visual identity", "Testimonials & bio", "Listings feed"],
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="currentColor">
@@ -18,8 +18,8 @@ const services = [
   {
     tag: "Showcase",
     title: "Property Showcase Pages",
-    desc: "Immersive single-property microsites with full-screen galleries, 3D tour embeds, neighborhood maps, and compelling copy to maximize buyer interest.",
-    features: ["Full-screen gallery", "3D tour embeds", "Neighborhood maps"],
+    desc: "Immersive single-property microsites with full-screen galleries, neighborhood maps, and compelling copy to maximize buyer interest.",
+    features: ["Full-screen gallery", "Videos", "Neighborhood maps"],
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="currentColor">
         <rect x="2" y="6" width="24" height="16" rx="1" />
@@ -43,7 +43,7 @@ const services = [
   {
     tag: "Performance",
     title: "Mobile-First Design",
-    desc: "90% of buyers search on mobile. Your site is crafted pixel-perfect on every device — fast, accessible, and optimized for Google's mobile-first index.",
+    desc: "90% of buyers search on mobile. Your site is crafted pixel-perfect on every device. Fast, accessible, and optimized for Google's mobile-first index.",
     features: ["Sub-2s load time", "Touch-optimized UI", "Core Web Vitals"],
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="currentColor">
@@ -56,7 +56,7 @@ const services = [
   {
     tag: "Visibility",
     title: "SEO & Local Visibility",
-    desc: "We embed on-page SEO, schema markup, and local keyword architecture so buyers searching in your area find you first — not your competition.",
+    desc: "We embed on-page SEO, schema markup, and local keyword architecture so buyers searching in your area find you first; not your competition.",
     features: ["On-page SEO", "Schema markup", "Local keyword targeting"],
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="currentColor">
@@ -100,21 +100,21 @@ export default function Services() {
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p style={{ fontSize: "0.88rem", lineHeight: 1.9, color: "rgba(242,237,230,0.5)", fontWeight: 300, alignSelf: "end" }}>
+            <p style={{ fontSize: "0.88rem", lineHeight: 1.9, color: "rgba(249,249,249,0.5)", fontWeight: 300, alignSelf: "end" }}>
               Every service we offer is built around one goal: making you the most visible, most trusted agent in your market. No templates. No shortcuts.
             </p>
           </Reveal>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1px", background: "rgba(196,201,206,0.1)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1px", background: "rgba(188,207,201,0.1)" }}>
           {services.map((s, i) => (
             <Reveal key={s.title} delay={(i % 2) * 0.1}>
               <div className="service-card">
                 <div style={{
                   width: 52,
                   height: 52,
-                  background: "rgba(196,201,206,0.08)",
-                  border: "1px solid rgba(196,201,206,0.2)",
+                  background: "rgba(188,207,201,0.08)",
+                  border: "1px solid rgba(188,207,201,0.2)",
                   borderRadius: "2px",
                   display: "flex",
                   alignItems: "center",
@@ -137,12 +137,12 @@ export default function Services() {
                 }}>
                   {s.title}
                 </h3>
-                <p style={{ fontSize: "0.82rem", lineHeight: 1.8, color: "rgba(242,237,230,0.45)", fontWeight: 300, marginBottom: 24 }}>
+                <p style={{ fontSize: "0.82rem", lineHeight: 1.8, color: "rgba(249,249,249,0.45)", fontWeight: 300, marginBottom: 24 }}>
                   {s.desc}
                 </p>
                 <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
                   {s.features.map((f) => (
-                    <div key={f} style={{ fontSize: "0.72rem", color: "rgba(242,237,230,0.35)", fontWeight: 300, display: "flex", alignItems: "center", gap: 8 }}>
+                    <div key={f} style={{ fontSize: "0.72rem", color: "rgba(249,249,249,0.35)", fontWeight: 300, display: "flex", alignItems: "center", gap: 8 }}>
                       <span style={{ width: 16, height: 1, background: "var(--gold)", opacity: 0.4, flexShrink: 0, display: "inline-block" }} />
                       {f}
                     </div>
@@ -172,7 +172,7 @@ export default function Services() {
           background: var(--gold);
           transition: width 0.5s ease;
         }
-        .service-card:hover { background: rgba(196,201,206,0.04); }
+        .service-card:hover { background: rgba(188,207,201,0.04); }
         .service-card:hover::after { width: 100%; }
         @media (max-width: 768px) {
           .service-card { padding: 40px 32px; }

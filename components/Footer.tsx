@@ -1,10 +1,5 @@
 "use client";
 
-const footerLinks = {
-  Services: ["Brand Websites", "Property Showcases", "Lead Funnels", "SEO & Visibility", "Maintenance"],
-  Company: ["About", "Our Process", "Pricing", "Case Studies", "Contact"],
-};
-
 export default function Footer() {
   return (
     <footer
@@ -19,7 +14,7 @@ export default function Footer() {
           maxWidth: 1200,
           margin: "0 auto",
           display: "grid",
-          gridTemplateColumns: "2fr 1fr 1fr 1fr",
+          gridTemplateColumns: "2fr 1fr",
           gap: 48,
           marginBottom: 48,
         }}
@@ -43,7 +38,7 @@ export default function Footer() {
           </a>
           <p
             style={{
-              color: "rgba(242,237,230,0.4)",
+              color: "rgba(249,249,249,0.4)",
               fontSize: "0.88rem",
               lineHeight: 1.7,
               fontWeight: 300,
@@ -54,45 +49,6 @@ export default function Footer() {
             just look beautiful — they perform.
           </p>
         </div>
-
-        {/* Link columns */}
-        {Object.entries(footerLinks).map(([title, links]) => (
-          <div key={title}>
-            <h4
-              style={{
-                fontFamily: "var(--font-dm-sans), sans-serif",
-                fontSize: "0.72rem",
-                letterSpacing: "0.15em",
-                textTransform: "uppercase",
-                color: "#e8e8ec",
-                marginBottom: 20,
-                fontWeight: 600,
-              }}
-            >
-              {title}
-            </h4>
-            <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
-              {links.map((link) => (
-                <li key={link}>
-                  <a
-                    href="#"
-                    style={{
-                      color: "rgba(242,237,230,0.4)",
-                      textDecoration: "none",
-                      fontSize: "0.88rem",
-                      fontWeight: 300,
-                      transition: "color 0.3s",
-                    }}
-                    onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--gold)")}
-                    onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(242,237,230,0.4)")}
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
 
         {/* Contact */}
         <div>
@@ -119,14 +75,14 @@ export default function Footer() {
                 <a
                   href={item.href}
                   style={{
-                    color: "rgba(242,237,230,0.4)",
+                    color: "rgba(249,249,249,0.4)",
                     textDecoration: "none",
                     fontSize: "0.88rem",
                     fontWeight: 300,
                     transition: "color 0.3s",
                   }}
                   onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--gold)")}
-                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(242,237,230,0.4)")}
+                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(249,249,249,0.4)")}
                 >
                   {item.label}
                 </a>
@@ -150,15 +106,34 @@ export default function Footer() {
           gap: 12,
         }}
       >
-        <p style={{ color: "rgba(242,237,230,0.4)", fontSize: "0.8rem" }}>
+        <p style={{ color: "rgba(249,249,249,0.4)", fontSize: "0.8rem" }}>
           © 2026 Luxury Homes. All rights reserved.
         </p>
         <div style={{ display: "flex", gap: 12 }}>
-          {["IG", "in", "𝕏"].map((icon) => (
+          {[
+            {
+              label: "Instagram",
+              svg: (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="0.7" fill="currentColor" stroke="none" />
+                </svg>
+              ),
+            },
+            {
+              label: "LinkedIn",
+              svg: (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S.02 4.88.02 3.5C.02 2.12 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v14H.22V8zm7.4 0h4.37v1.92h.06c.61-1.16 2.1-2.39 4.32-2.39 4.62 0 5.47 3.04 5.47 7v7.47h-4.56V15.4c0-1.7-.03-3.89-2.37-3.89-2.37 0-2.74 1.85-2.74 3.77V22H7.62V8z" />
+                </svg>
+              ),
+            },
+          ].map((item) => (
             <a
-              key={icon}
+              key={item.label}
               href="#"
-              aria-label={icon}
+              aria-label={item.label}
               style={{
                 width: 36,
                 height: 36,
@@ -167,9 +142,8 @@ export default function Footer() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                color: "rgba(242,237,230,0.4)",
+                color: "rgba(249,249,249,0.4)",
                 textDecoration: "none",
-                fontSize: "0.82rem",
                 transition: "all 0.3s",
               }}
               onMouseEnter={(e) => {
@@ -180,10 +154,10 @@ export default function Footer() {
               onMouseLeave={(e) => {
                 const el = e.currentTarget;
                 el.style.borderColor = "var(--border)";
-                el.style.color = "rgba(242,237,230,0.4)";
+                el.style.color = "rgba(249,249,249,0.4)";
               }}
             >
-              {icon}
+              {item.svg}
             </a>
           ))}
         </div>

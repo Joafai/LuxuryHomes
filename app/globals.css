@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #03040f;
-  --bone: #edf0ee;
-  --gold: #c4c9ce;
-  --gold-light: #dde0e4;
-  --gold-dark: #8a9198;
-  --warm-white: #edf0ee;
-  --mid: #7a9e94;
-  --faint: #c8dcd8;
-  --dark: #04050f;
-  --dark-2: #04050f;
-  --dark-3: #04050f;
-  --dark-4: #04050f;
-  --border: rgba(196, 201, 206, 0.15);
-  --gold-accent: #c9a96e;
-  --gold-accent-light: #e0c48a;
+  --ink: #202020;
+  --bone: #F9F9F9;
+  --gold: #BCCFC9;
+  --gold-light: #E5E1DE;
+  --gold-dark: #BCCFC9;
+  --warm-white: #F9F9F9;
+  --mid: #BCCFC9;
+  --faint: #BCCFC9;
+  --dark: #202020;
+  --dark-2: #202020;
+  --dark-3: #202020;
+  --dark-4: #202020;
+  --border: rgba(188, 207, 201, 0.15);
+  --gold-accent: #BCCFC9;
+  --gold-accent-light: #E5E1DE;
   --serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
   --sans: var(--font-dm-sans), 'DM Sans', sans-serif;
 }
@@ -60,7 +60,7 @@ body {
   position: fixed;
   width: 36px;
   height: 36px;
-  border: 1px solid rgba(196, 201, 206, 0.4);
+  border: 1px solid rgba(188,207,201, 0.4);
   border-radius: 50%;
   pointer-events: none;
   z-index: 99998;
@@ -128,11 +128,11 @@ section { padding: 120px 60px; }
 
 /* MARQUEE */
 .marquee-strip {
-  border-top: 1px solid rgba(196, 201, 206, 0.15);
-  border-bottom: 1px solid rgba(196, 201, 206, 0.15);
+  border-top: 1px solid rgba(188,207,201, 0.15);
+  border-bottom: 1px solid rgba(188,207,201, 0.15);
   padding: 18px 0;
   overflow: hidden;
-  background: rgba(196, 201, 206, 0.03);
+  background: rgba(188,207,201, 0.03);
 }
 .marquee-track {
   display: flex;
@@ -145,7 +145,7 @@ section { padding: 120px 60px; }
   font-size: 0.65rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgba(242, 237, 230, 0.3);
+  color: rgba(249,249,249, 0.3);
   flex-shrink: 0;
 }
 .marquee-dot {
@@ -176,7 +176,7 @@ section { padding: 120px 60px; }
 .pricing-header p {
   font-size: 0.88rem;
   line-height: 1.9;
-  color: rgba(242, 237, 230, 0.5);
+  color: rgba(249,249,249, 0.5);
   font-weight: 300;
   align-self: end;
 }
@@ -185,7 +185,7 @@ section { padding: 120px 60px; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  background: rgba(196, 201, 206, 0.12);
+  background: rgba(188,207,201, 0.12);
 }
 .price-card {
   background: var(--ink);
@@ -195,8 +195,8 @@ section { padding: 120px 60px; }
   display: flex;
   flex-direction: column;
 }
-.price-card:hover { background: rgba(196, 201, 206, 0.04); }
-.price-card.featured { background: rgba(196, 201, 206, 0.07); }
+.price-card:hover { background: rgba(188,207,201, 0.04); }
+.price-card.featured { background: rgba(188,207,201, 0.07); }
 .price-badge {
   font-size: 0.58rem;
   letter-spacing: 0.25em;
@@ -223,14 +223,14 @@ section { padding: 120px 60px; }
 .price-value span { color: var(--gold); font-size: 0.5em; vertical-align: super; }
 .price-note {
   font-size: 0.72rem;
-  color: rgba(242, 237, 230, 0.35);
+  color: rgba(249,249,249, 0.35);
   margin-bottom: 36px;
   font-weight: 300;
 }
 .price-divider {
   width: 40px;
   height: 1px;
-  background: rgba(196, 201, 206, 0.3);
+  background: rgba(188,207,201, 0.3);
   margin-bottom: 28px;
 }
 .price-features {
@@ -242,7 +242,7 @@ section { padding: 120px 60px; }
 }
 .price-feat {
   font-size: 0.78rem;
-  color: rgba(242, 237, 230, 0.55);
+  color: rgba(249,249,249, 0.55);
   font-weight: 300;
   display: flex;
   align-items: flex-start;
@@ -266,13 +266,13 @@ section { padding: 120px 60px; }
   text-transform: uppercase;
   padding: 14px 24px;
   text-decoration: none;
-  border: 1px solid rgba(196, 201, 206, 0.3);
+  border: 1px solid rgba(188,207,201, 0.3);
   color: var(--gold);
   transition: background 0.3s, color 0.3s, border-color 0.3s;
   border-radius: 1px;
 }
 .price-cta:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
-.price-cta.featured { background: var(--gold); color: var(--bone); border-color: var(--gold); box-shadow: inset 0 0 0 1px rgba(201,169,110,0.3); }
+.price-cta.featured { background: var(--gold); color: var(--bone); border-color: var(--gold); box-shadow: inset 0 0 0 1px rgba(188,207,201,0.3); }
 .price-cta.featured:hover { background: var(--gold-light); }
 
 .price-cta-hover {
@@ -306,7 +306,7 @@ section { padding: 120px 60px; }
 .faq-left h2 em { font-style: italic; color: var(--gold); }
 .faq-list { display: flex; flex-direction: column; }
 .faq-item {
-  border-bottom: 1px solid rgba(196, 201, 206, 0.12);
+  border-bottom: 1px solid rgba(188,207,201, 0.12);
   padding: 28px 0;
   cursor: pointer;
 }
@@ -319,7 +319,7 @@ section { padding: 120px 60px; }
 .faq-question h4 {
   font-size: 0.88rem;
   font-weight: 400;
-  color: rgba(242, 237, 230, 0.8);
+  color: rgba(249,249,249, 0.8);
   line-height: 1.4;
 }
 .faq-toggle {
@@ -337,7 +337,7 @@ section { padding: 120px 60px; }
 .faq-answer {
   font-size: 0.82rem;
   line-height: 1.8;
-  color: rgba(242, 237, 230, 0.4);
+  color: rgba(249,249,249, 0.4);
   font-weight: 300;
   max-height: 0;
   overflow: hidden;
@@ -361,7 +361,7 @@ section { padding: 120px 60px; }
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(196, 201, 206, 0.12) 0%, transparent 60%);
+  background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(188,207,201, 0.12) 0%, transparent 60%);
 }
 .cta-final-inner {
   position: relative;
@@ -388,7 +388,7 @@ section { padding: 120px 60px; }
 #cta-final > div > div p {
   font-size: 0.9rem;
   line-height: 1.8;
-  color: rgba(14, 14, 13, 0.5);
+  color: rgba(32,32,32, 0.5);
   font-weight: 300;
   margin-bottom: 48px;
   max-width: 520px;
@@ -421,7 +421,7 @@ section { padding: 120px 60px; }
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--ink);
-  border: 1px solid rgba(14, 14, 13, 0.25);
+  border: 1px solid rgba(32,32,32, 0.25);
   padding: 16px 40px;
   text-decoration: none;
   border-radius: 1px;
@@ -431,7 +431,7 @@ section { padding: 120px 60px; }
 .cta-guarantee {
   margin-top: 24px;
   font-size: 0.7rem;
-  color: rgba(14, 14, 13, 0.35);
+  color: rgba(32,32,32, 0.35);
   font-weight: 300;
   letter-spacing: 0.05em;
 }

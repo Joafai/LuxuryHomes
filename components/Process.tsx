@@ -6,7 +6,7 @@ const steps = [
   {
     num: "I",
     title: "Discovery Call",
-    desc: "We learn your brand, your market, your goals, and your aesthetic vision. No forms — just a real conversation.",
+    desc: "We learn your brand, your market, your goals, and your aesthetic vision.",
   },
   {
     num: "II",
@@ -50,7 +50,7 @@ export default function Process() {
               style={{
                 fontFamily: "var(--font-cormorant), serif",
                 fontSize: "clamp(2rem, 4vw, 3.2rem)",
-                color: "#fff",
+                color: "#F9F9F9",
                 marginBottom: 20,
               }}
             >
@@ -62,7 +62,7 @@ export default function Process() {
           <Reveal delay={0.2}>
             <p
               style={{
-                color: "rgba(242,237,230,0.4)",
+                color: "rgba(249,249,249,0.4)",
                 fontSize: "1rem",
                 maxWidth: 520,
                 margin: "0 auto",
@@ -93,7 +93,7 @@ export default function Process() {
               left: "calc(12.5% + 36px)",
               right: "calc(12.5% + 36px)",
               height: 1,
-              background: "linear-gradient(90deg, var(--gold), rgba(201,169,110,0.2), var(--gold))",
+              background: "linear-gradient(90deg, var(--gold), rgba(188,207,201,0.2), var(--gold))",
             }}
             className="process-line"
           />
@@ -138,13 +138,13 @@ export default function Process() {
                 style={{
                   fontFamily: "var(--font-cormorant), serif",
                   fontSize: "1rem",
-                  color: "#fff",
+                  color: "#F9F9F9",
                   marginBottom: 12,
                 }}
               >
                 {s.title}
               </h3>
-              <p style={{ color: "rgba(242,237,230,0.4)", fontSize: "0.85rem", fontWeight: 300, lineHeight: 1.7 }}>
+              <p style={{ color: "rgba(249,249,249,0.4)", fontSize: "0.85rem", fontWeight: 300, lineHeight: 1.7 }}>
                 {s.desc}
               </p>
             </Reveal>

@@ -9,10 +9,11 @@ import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import BookingProvider from "@/components/BookingContext";
 
 export default function Home() {
   return (
-    <>
+    <BookingProvider>
       <Navbar />
       <main>
         <Hero />
@@ -26,6 +27,6 @@ export default function Home() {
         <CTA />
       </main>
       <Footer />
-    </>
+    </BookingProvider>
   );
 }

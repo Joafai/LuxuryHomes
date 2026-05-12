@@ -39,6 +39,10 @@ yarn-error.log*
 # here.now (contains claim tokens)
 .herenow/
 
+# Large media (exceed GitHub's 100MB limit — keep locally for build / here.now upload)
+public/Luxury Homes Hero.mp4
+public/*.mp4
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
