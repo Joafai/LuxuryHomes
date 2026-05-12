@@ -22,16 +22,13 @@ npm run lint         # eslint via flat config (eslint.config.mjs)
 
 There is no test suite configured.
 
-## Build gotcha — static export vs. API route
+## Deployment model
 
-[next.config.ts](next.config.ts) sets `output: "export"` (with `images: { unoptimized: true }`), which produces a fully static site in `out/`. **But** the project also ships [app/api/contact/route.ts](app/api/contact/route.ts), which requires a Node server runtime (it instantiates a Nodemailer transport).
+Deploys to Vercel as a Node/server app. [next.config.ts](next.config.ts) is empty (defaults), so Next builds in hybrid mode: the page prerenders as static, while [app/api/contact/route.ts](app/api/contact/route.ts) runs as a serverless function for the booking form.
 
-These two cannot both be live in production simultaneously. When working in this repo, decide intentionally:
+There is no separate `out/` directory in this mode — Vercel handles `.next/` directly. If you ever need to switch back to a fully static export (e.g. for here.now or another static host), add `output: "export"` and `images: { unoptimized: true }` to next.config.ts, and accept that `/api/contact` will not exist in production (the booking modal will 404 on submit unless rewired to an external service like Resend or Formspree).
 
-- If the contact form must work in prod → remove `output: "export"` and deploy as a Node/Vercel server app.
-- If the site must remain a static export → the `/api/contact` route will not exist in `out/` and the booking modal's `fetch("/api/contact")` will 404. Move the form action to an external service (Resend, Formspree, etc.) — `resend` is already in dependencies.
-
-Don't silently "fix" one side without confirming which deployment model is intended.
+**Case-sensitive paths:** Vercel runs Linux. The hero video at `/Luxury%20Homes%20Hero.mp4` and the logos at `/Logos/N.png` (capital L) must match disk casing exactly. macOS is case-insensitive so bugs here only surface in production.
 
 ## Required environment variables
 

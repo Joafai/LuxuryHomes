@@ -12,7 +12,7 @@ export default function Marquee() {
         {doubled.map((n, i) => (
           <span key={i} style={{ display: "inline-flex", alignItems: "center", flexShrink: 0 }}>
             <Image
-              src={`/logos/${n}.png`}
+              src={`/Logos/${n}.png`}
               alt={`Logo ${n}`}
               width={120}
               height={40}
