@@ -28,7 +28,7 @@ Deploys to Vercel as a Node/server app. [next.config.ts](next.config.ts) is empt
 
 There is no separate `out/` directory in this mode — Vercel handles `.next/` directly. If you ever need to switch back to a fully static export (e.g. for here.now or another static host), add `output: "export"` and `images: { unoptimized: true }` to next.config.ts, and accept that `/api/contact` will not exist in production (the lead form will show its error state on submit unless rewired to an external service like Resend or Formspree).
 
-**Case-sensitive paths:** Vercel runs Linux. The logos at `/brand/lh-logo-dark.png` and `/brand/lh-logo-light.png` must match disk casing exactly. macOS is case-insensitive so bugs here only surface in production.
+**Case-sensitive paths:** Vercel runs Linux. The hero video at `/Luxury%20Homes%20Hero.mp4`, its poster `/hero-poster.jpg` and the logos at `/brand/lh-logo-dark.png` and `/brand/lh-logo-light.png` must match disk casing exactly. macOS is case-insensitive so bugs here only surface in production.
 
 ## Required environment variables
 
@@ -48,7 +48,7 @@ Single-page marketing landing for a real-estate-website agency. Everything rende
 
 [app/layout.tsx](app/layout.tsx) loads three Google fonts as CSS variables — `Gloock` (`--font-gloock`, headings), `Instrument Serif` normal + italic (`--font-instrument-serif`, italic accents, numerals, quotes) and `Outfit` (`--font-outfit`, body/UI, weight 300 by default) — and mounts the global custom [Cursor](components/Cursor.tsx) once for the whole site.
 
-Of the components rendered on the page, only [LeadForm](components/LeadForm.tsx), [Pricing](components/Pricing.tsx), [BookingContext](components/BookingContext.tsx), [Cursor](components/Cursor.tsx) and [RevealWrapper](components/RevealWrapper.tsx) are client components; every other section is a server component. ([Logos.tsx](components/Logos.tsx) is an old, unused component.) Hover effects live in CSS classes, not `onMouseEnter` handlers, so keep it that way unless a section genuinely needs state.
+Of the components rendered on the page, only [LeadForm](components/LeadForm.tsx), [Pricing](components/Pricing.tsx), [HeroVideo](components/HeroVideo.tsx), [BookingContext](components/BookingContext.tsx), [Cursor](components/Cursor.tsx) and [RevealWrapper](components/RevealWrapper.tsx) are client components; every other section is a server component. ([Logos.tsx](components/Logos.tsx) is an old, unused component.) Hover effects live in CSS classes, not `onMouseEnter` handlers, so keep it that way unless a section genuinely needs state.
 
 ### Styling model — read this before editing UI
 
@@ -64,7 +64,7 @@ Tailwind is installed but barely used; `className`-driven Tailwind utilities are
 
 ### Image placeholders
 
-The design's screenshots/mockups don't exist yet, so [Placeholder.tsx](components/Placeholder.tsx) renders striped stand-ins (`tone="light" | "dark"`) labelled with what belongs there — in Hero, Work, Why and CTA. Bracketed copy such as `[Client name]` / `[City, State]` next to them is also placeholder text. Swap each for a `next/image` when the real asset arrives.
+The design's screenshots/mockups don't exist yet, so [Placeholder.tsx](components/Placeholder.tsx) renders striped stand-ins (`tone="light" | "dark"`) labelled with what belongs there — in Work, Why and CTA. Bracketed copy such as `[Client name]` / `[City, State]` next to them is also placeholder text. Swap each for a `next/image` when the real asset arrives.
 
 ### Custom cursor
 
@@ -86,4 +86,6 @@ The inline [LeadForm](components/LeadForm.tsx) (`#start`, right after the hero) 
 
 Brand logos live in [public/brand/](public/brand/) (`lh-logo-dark.png` for light surfaces, `lh-logo-light.png` for dark), rendered through `next/image`.
 
-`public/LH-photo.png` (~21 MB), `public/Luxury Homes Hero.mp4` and `public/Logos/*.png` are committed but no longer referenced by the page since the Cream & Gold redesign (no hero video, no logo marquee). Compress anything you bring back before deploying — the photo alone would be the biggest payload on the page.
+The hero's right-hand box plays `public/Luxury Homes Hero.mp4` (1920×1080, 21 s, ~18 MB) through [HeroVideo.tsx](components/HeroVideo.tsx): muted loop, `preload="none"`, started from `useEffect` only when `prefers-reduced-motion` isn't set (reduced-motion visitors keep the poster and never download the video). The poster `public/hero-poster.jpg` (~230 KB) is the video's first frame, so playback starts without a visual jump. It is preloaded with `fetchPriority: "high"` since it's the biggest above-the-fold image. If you re-encode the video, regenerate the poster from its new first frame.
+
+`public/LH-photo.png` (~21 MB, the old poster, which didn't match the video) and `public/Logos/*.png` are committed but not referenced by the page. Compress anything you bring back before deploying.

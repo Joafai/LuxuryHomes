@@ -1,4 +1,4 @@
-import Placeholder from "./Placeholder";
+import HeroVideo from "./HeroVideo";
 
 export default function Hero() {
   return (
@@ -29,26 +29,7 @@ export default function Hero() {
         </div>
 
         <div className="hero-visual">
-          <Placeholder style={{ position: "absolute", inset: 0 }}>
-            Featured client site
-            <br />
-            Laptop + phone mockup of a recent project
-          </Placeholder>
-          <div className="hero-caption">
-            <p style={{ fontFamily: "var(--display)", fontSize: 22, lineHeight: 1.2 }}>[Client name]</p>
-            <p
-              style={{
-                marginTop: 6,
-                fontSize: 11,
-                fontWeight: 500,
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                color: "var(--text-muted)",
-              }}
-            >
-              [City, State] · Brand site
-            </p>
-          </div>
+          <HeroVideo />
         </div>
       </div>
     </section>
