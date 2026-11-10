@@ -3,141 +3,157 @@
 import Reveal from "./RevealWrapper";
 import { useBooking } from "./BookingContext";
 
-export default function Pricing() {
-  const { open: openBooking } = useBooking();
+const plans = [
+  {
+    tier: "Starter",
+    name: "Essentials",
+    desc: "The right foundation for agents ready to stop being invisible online.",
+    features: [
+      "Semi-custom premium design",
+      "Single page, up to 5 sections",
+      "Gallery, up to 10 listings",
+      "Contact & booking forms",
+      "1 revision round",
+      "7–10 business days",
+    ],
+  },
+  {
+    tier: "Growth",
+    name: "Professional",
+    featured: true,
+    desc: "For agents who want a site that works as hard as they do.",
+    features: [
+      "100% bespoke design",
+      "Up to 5 pages, modular sections",
+      "Property search with filters",
+      "Self-managed listings panel",
+      "Blog / market news",
+      "Analytics + on-page SEO",
+      "2 revision rounds",
+    ],
+  },
+  {
+    tier: "Teams",
+    name: "Brokerage",
+    desc: "For teams and brokerages that need a platform, not just a website.",
+    features: [
+      "Everything in Professional",
+      "Two initial design proposals",
+      "Multi-agent profiles",
+      "Multi-user admin panel",
+      "CRM integration",
+      "Monthly strategy call",
+    ],
+  },
+  {
+    tier: "Projects",
+    name: "New Developments",
+    desc: "For developments, pre-sales and real estate projects.",
+    features: [
+      "Project landing & branding",
+      "Two initial design proposals",
+      "Units, availability & floor plans",
+      "Pre-sale lead capture",
+      "Multilingual support",
+      "Virtual tour integration",
+    ],
+  },
+];
 
-  const open = (plan: string) => (e: React.MouseEvent) => {
-    e.preventDefault();
-    openBooking(plan);
-  };
+export default function Pricing() {
+  const { selectPlan } = useBooking();
 
   return (
-    <section id="pricing">
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-
-        <div className="pricing-header" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px", alignItems: "end", marginBottom: "80px" }}>
-          <Reveal>
-            <div className="section-label">Investment</div>
-            <h2>Every scope.<br /><em>One team.</em></h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p>
-              From a first site to a full brokerage platform, we scope each project
-              to what you actually need. All plans include hosting, SSL, and a training session.
-            </p>
-          </Reveal>
-        </div>
-
-        <Reveal>
-          <div className="pricing-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
-
-            <div className="price-card">
-              <span className="price-badge">Starter</span>
-              <div className="price-name">Essentials</div>
-              <p style={{ fontSize: "0.78rem", color: "rgba(249,249,249,0.4)", fontWeight: 300, lineHeight: 1.6 }}>
-                The right foundation for agents ready to stop being invisible online.
-              </p>
-              <div className="price-divider" style={{ marginTop: 24 }} />
-              <div className="price-features">
-                {[
-                  "Semi-custom premium design",
-                  "Up to 5 sections",
-                  "Property gallery (up to 10 listings)",
-                  "Contact & WhatsApp forms",
-                  "Mobile optimized",
-                  "Domain + 1st year hosting",
-                  "1 revision round",
-                  "Delivered in 7–10 business days",
-                ].map((f) => (
-                  <div key={f} className="price-feat">
-                    <div className="price-feat-dot" />{f}
-                  </div>
-                ))}
-              </div>
-              <a href="#" onClick={open("Essentials")} className="price-cta price-cta-hover">Book a call →</a>
-            </div>
-
-            <div className="price-card featured">
-              <span className="price-badge">★ Most chosen</span>
-              <div className="price-name">Professional</div>
-              <p style={{ fontSize: "0.78rem", color: "rgba(249,249,249,0.4)", fontWeight: 300, lineHeight: 1.6 }}>
-                For agents who want a site that works as hard as they do.
-              </p>
-              <div className="price-divider" style={{ marginTop: 24 }} />
-              <div className="price-features">
-                {[
-                  "100% bespoke design",
-                  "Unlimited sections",
-                  "Property search with filtering",
-                  "Self-managed listings panel",
-                  "Blog / Market news module",
-                  "Google Analytics setup",
-                  "On-page SEO configured",
-                  "2 revision rounds",
-                  "60 days post-launch support",
-                ].map((f) => (
-                  <div key={f} className="price-feat">
-                    <div className="price-feat-dot" />{f}
-                  </div>
-                ))}
-              </div>
-              <a href="#" onClick={open("Professional")} className="price-cta featured price-cta-hover">Book a call →</a>
-            </div>
-
-            <div className="price-card">
-              <span className="price-badge">Enterprise</span>
-              <div className="price-name">Brokerage</div>
-              <p style={{ fontSize: "0.78rem", color: "rgba(249,249,249,0.4)", fontWeight: 300, lineHeight: 1.6 }}>
-                For teams and brokerages that need a platform, not just a website.
-              </p>
-              <div className="price-divider" style={{ marginTop: 24 }} />
-              <div className="price-features">
-                {[
-                  "Everything in Professional",
-                  "Multi-agent profiles",
-                  "Multi-user admin panel",
-                  "CRM integration",
-                  "Full corporate branding system",
-                  "Team training session",
-                  "Priority SLA support",
-                  "Monthly strategy call",
-                ].map((f) => (
-                  <div key={f} className="price-feat">
-                    <div className="price-feat-dot" />{f}
-                  </div>
-                ))}
-              </div>
-              <a href="#" onClick={open("Brokerage")} className="price-cta price-cta-hover">Book a call →</a>
-            </div>
-
-            <div className="price-card">
-              <span className="price-badge">Real Estate</span>
-              <div className="price-name">Developments</div>
-              <p style={{ fontSize: "0.78rem", color: "rgba(249,249,249,0.4)", fontWeight: 300, lineHeight: 1.6 }}>
-                Tailored digital presence for building developments, pre-sales, and real estate projects.
-              </p>
-              <div className="price-divider" style={{ marginTop: 24 }} />
-              <div className="price-features">
-                {[
-                  "Project landing page & branding",
-                  "Unit availability & floor plans",
-                  "Interactive gallery",
-                  "Pre-sale lead capture system",
-                  "WhatsApp & email automation",
-                  "Multilingual support",
-                  "Virtual tour integration",
-                  "Ongoing updates as project evolves",
-                ].map((f) => (
-                  <div key={f} className="price-feat">
-                    <div className="price-feat-dot" />{f}
-                  </div>
-                ))}
-              </div>
-              <a href="#" onClick={open("Developments")} className="price-cta price-cta-hover">Book a call →</a>
-            </div>
-
-          </div>
+    <section id="pricing" className="section" style={{ background: "var(--cream-deep)" }}>
+      <div className="container">
+        <Reveal style={{ textAlign: "center", marginBottom: 64 }}>
+          <p className="eyebrow">Investment</p>
+          <h2 className="title">
+            Every scope. <em>One team.</em>
+          </h2>
+          <p className="lead" style={{ margin: "22px auto 0", maxWidth: 560 }}>
+            From a first site to a full brokerage platform. Every plan includes hosting, SSL and a training session.
+          </p>
         </Reveal>
+
+        <div className="grid-4" style={{ gap: 20 }}>
+          {plans.map((plan, i) => {
+            const featured = Boolean(plan.featured);
+            return (
+              <Reveal key={plan.name} delay={i * 0.1}>
+                <div
+                  className={featured ? "tone-dark" : undefined}
+                  style={{
+                    position: "relative",
+                    height: "100%",
+                    padding: "44px 34px",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 20,
+                    background: featured ? "var(--ink)" : "var(--paper)",
+                  }}
+                >
+                  {featured && (
+                    <p
+                      style={{
+                        position: "absolute",
+                        top: -14,
+                        left: 34,
+                        padding: "7px 14px",
+                        background: "var(--gold)",
+                        color: "var(--ink)",
+                        fontSize: 10,
+                        fontWeight: 600,
+                        letterSpacing: "0.22em",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      Most chosen
+                    </p>
+                  )}
+                  <p
+                    style={{
+                      fontSize: 11,
+                      fontWeight: 500,
+                      letterSpacing: "0.24em",
+                      textTransform: "uppercase",
+                      color: featured ? "var(--gold-light)" : "var(--gold-deep)",
+                    }}
+                  >
+                    {plan.tier}
+                  </p>
+                  <h3 style={{ fontFamily: "var(--display)", fontWeight: 400, fontSize: 34 }}>{plan.name}</h3>
+                  <p style={{ fontSize: 15, lineHeight: 1.6, color: featured ? "var(--on-dark-muted)" : "var(--text-body)" }}>
+                    {plan.desc}
+                  </p>
+                  <ul
+                    style={{
+                      flexGrow: 1,
+                      paddingTop: 22,
+                      borderTop: `1px solid ${featured ? "var(--line-on-dark)" : "var(--line-card)"}`,
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 11,
+                      fontSize: 15,
+                      color: featured ? "var(--on-dark-soft)" : "var(--text-strong)",
+                    }}
+                  >
+                    {plan.features.map((f) => (
+                      <li key={f}>{f}</li>
+                    ))}
+                  </ul>
+                  <a
+                    href="#start"
+                    onClick={() => selectPlan(plan.name)}
+                    className={`btn btn-block ${featured ? "btn-gold" : "btn-outline"}`}
+                  >
+                    Book a call
+                  </a>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

@@ -1,10 +1,11 @@
 "use client";
 
 import { createContext, useContext, useState, type ReactNode } from "react";
-import BookingModal from "./BookingModal";
 
 interface BookingContextValue {
-  open: (plan: string) => void;
+  /** Plan picked from a pricing card; sent along with the lead form. */
+  plan: string | null;
+  selectPlan: (plan: string) => void;
 }
 
 const BookingContext = createContext<BookingContextValue | null>(null);
@@ -16,13 +17,10 @@ export function useBooking() {
 }
 
 export default function BookingProvider({ children }: { children: ReactNode }) {
-  const [activePlan, setActivePlan] = useState<string | null>(null);
+  const [plan, setPlan] = useState<string | null>(null);
   return (
-    <BookingContext.Provider value={{ open: setActivePlan }}>
+    <BookingContext.Provider value={{ plan, selectPlan: setPlan }}>
       {children}
-      {activePlan && (
-        <BookingModal plan={activePlan} onClose={() => setActivePlan(null)} />
-      )}
     </BookingContext.Provider>
   );
 }

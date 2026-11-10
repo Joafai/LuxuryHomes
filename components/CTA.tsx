@@ -1,44 +1,34 @@
-"use client";
-
 import Reveal from "./RevealWrapper";
+import Placeholder from "./Placeholder";
 
 export default function CTA() {
   return (
-    <section id="cta-final">
-      <div className="cta-final-inner">
-        <Reveal>
-          <p className="cta-final-eyebrow">Ready when you are</p>
-        </Reveal>
-
-        <Reveal delay={0.1}>
-          <h2>
-            Your site<br />could be <em>live</em><br />in two weeks.
-          </h2>
-        </Reveal>
-
-        <Reveal delay={0.2}>
-          <p>
-            Most agents spend months thinking about it. The ones who book a call today
-            are already getting inquiries by next month. The call is free. The decision is yours.
-          </p>
-        </Reveal>
-
-        <Reveal delay={0.3}>
-          <div className="cta-final-buttons">
-            <a href="mailto:hello@luxuryhomes.studio" className="btn-dark">
-              Book a free 30-min call
-            </a>
-            <a href="https://wa.me/" className="btn-outline-dark">
-              Message us on WhatsApp
-            </a>
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.4}>
-          <p className="cta-guarantee">
-            No commitment required · Response within 24 hours
-          </p>
-        </Reveal>
+    <section id="cta" className="tone-dark" style={{ background: "var(--night)" }}>
+      <div className="container cta-grid">
+        <div className="cta-copy">
+          <Reveal>
+            <p className="eyebrow" style={{ marginBottom: 22 }}>
+              Ready when you are
+            </p>
+            <h2 className="title" style={{ fontSize: "clamp(44px, 5.4vw, 78px)", lineHeight: 1, letterSpacing: "-0.02em" }}>
+              Your site could be <em>live in two weeks.</em>
+            </h2>
+            <p style={{ marginTop: 28, maxWidth: 480, fontSize: 18, lineHeight: 1.7, color: "var(--on-dark-muted)" }}>
+              Most agents spend months thinking about it. A 30-minute call is all it takes to get started.
+            </p>
+            <div style={{ marginTop: 42, display: "flex", gap: 14, flexWrap: "wrap" }}>
+              <a href="#start" className="btn btn-gold-light">
+                Book a call →
+              </a>
+              <a href="#start" className="btn btn-ghost">
+                Get a quote
+              </a>
+            </div>
+          </Reveal>
+        </div>
+        <Placeholder tone="dark" className="cta-shot">
+          Client project — hero screenshot
+        </Placeholder>
       </div>
     </section>
   );

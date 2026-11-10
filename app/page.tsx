@@ -1,7 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Marquee from "@/components/Marquee";
+import LeadForm from "@/components/LeadForm";
+import TrustStrip from "@/components/TrustStrip";
 import Services from "@/components/Services";
+import Work from "@/components/Work";
 import Why from "@/components/Why";
 import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
@@ -17,8 +19,10 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Marquee />
+        <LeadForm />
+        <TrustStrip />
         <Services />
+        <Work />
         <Why />
         <Process />
         <Testimonials />

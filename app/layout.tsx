@@ -1,39 +1,41 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Gloock, Instrument_Serif, Outfit } from "next/font/google";
 import "./globals.css";
 import Cursor from "@/components/Cursor";
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const gloock = Gloock({
+  variable: "--font-gloock",
   subsets: ["latin"],
-  weight: ["300", "400", "600"],
+  weight: "400",
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: "400",
   style: ["normal", "italic"],
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
 });
 
 export const metadata: Metadata = {
   title: "Luxury Homes — Premium Websites for Real Estate Agents",
   description:
-    "We craft bespoke, high-converting websites for elite real estate agents — designed to captivate buyers, build trust, and close deals faster.",
+    "Bespoke, high-converting websites for elite agents and brokerages across the US. Designed to captivate buyers, build trust and close deals faster.",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
-      <body
-        style={{
-          fontFamily: "var(--font-dm-sans), sans-serif",
-          background: "var(--dark)",
-          color: "#e8e8ec",
-        }}
-      >
+    <html
+      lang="en"
+      className={`${gloock.variable} ${instrumentSerif.variable} ${outfit.variable}`}
+    >
+      <body>
         <Cursor />
         {children}
       </body>

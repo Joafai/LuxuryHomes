@@ -11,7 +11,8 @@ export default function Cursor() {
     const ring = ringRef.current;
     if (!cursor || !ring) return;
 
-    let mx = 0, my = 0, rx = 0, ry = 0;
+    // Start off-screen so nothing shows in the corner before the first move.
+    let mx = -100, my = -100, rx = -100, ry = -100;
     let raf: number;
 
     const onMove = (e: MouseEvent) => {
@@ -46,7 +47,7 @@ export default function Cursor() {
     };
 
     const attach = () => {
-      document.querySelectorAll("a, button, .service-card, .faq-item").forEach((el) => {
+      document.querySelectorAll("a, button, summary, input, select").forEach((el) => {
         el.addEventListener("mouseenter", grow);
         el.addEventListener("mouseleave", shrink);
       });
